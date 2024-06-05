@@ -1,0 +1,28 @@
+{%extends "basenew.html"%}
+
+{%block start%}
+<table class="table col-6 mx-auto  p-3 shadow-lg table-striped-columns" >
+    <thead>
+      <tr>
+        <th scope="col">S.NO</th>
+        <th scope="col">Receipe Name</th>
+        <th scope="col">Receipe Category</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {%csrf_token%}
+    {%for recipe in recipes %}
+      <tr >
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{recipe.recipe_name}}</td>
+        <td>{{recipe.recipe_category}}</td>
+        <td ><a href="/delete-recipe/{{recipe.id}}" class="btn btn-danger">Delete</td>
+        <td ><a href="/update-recipe/{{recipe.id}}" class="btn btn-success">Update</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  
+{%endblock%}

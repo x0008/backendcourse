@@ -1,0 +1,24 @@
+{%extends "basenew.html"%}
+
+{%block start%}
+
+<form method = "post" enctype="multipart/form-data" class="col-6 mx-auto card p-3 shadow-lg ">
+    {% csrf_token %}
+    <div class="mb-5" >
+      <label for="exampleInputEmail1" class="form-label">Receipe Name</label>
+      <input type="text" name="recipe_name" class="form-control" value="{{recipes.recipe_name}}">
+      <div id="emailHelp" class="form-text">Add the Receipe Name here</div>
+    </div>
+    <div class="mb-4">
+      <label for="exampleInputPassword1" class="form-label">Category</label>
+      <input type="text" name="recipe_category" class="form-control" value="{{recipes.recipe_category}}">
+    </div>
+    {% comment %} <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> {% endcomment %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+{%endblock%}

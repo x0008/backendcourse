@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{%block start%}
+
+{{peoples}}
+{%csrf_token%}
+            <ul>
+                {%for i in peoples%}
+                <li>{{i}}</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+                {% endfor %}
+            </ul>
+
+{%endblock%}
